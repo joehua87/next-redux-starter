@@ -8,14 +8,22 @@ import ArticleCardList from 'components/ArticleCardList'
 import * as actions from './actions'
 import selectStateJS from './selectors'
 
-const Home = ({ articles, loadArticles }: {
+const sources = require('./sources.json')
+
+const Home = ({ articles, isLoading, loadArticles }: {
   articles: Array<Article>,
+  isLoading: boolean,
   loadArticles: () => void,
 }) => (
   <Layout>
     <div>
-      <button onClick={() => loadArticles()}>Reload</button>
-      <ArticleCardList articles={articles} />
+      <select onChange={(e: any) => loadArticles(e.target.value)}>
+        {sources.map(item => (
+          <option key={item} value={item}>{item}</option>
+        ))}
+      </select>
+      {isLoading && <div>Loading</div>}
+      {!isLoading && <ArticleCardList articles={articles} />}
     </div>
   </Layout>
 )
