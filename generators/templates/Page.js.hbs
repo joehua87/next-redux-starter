@@ -1,0 +1,34 @@
+// @flow
+
+import React from 'react'
+{{#if useState}}
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+{{/if}}
+import Layout from 'components/Layout'
+{{#if useState}}
+import * as actions from './actions'
+import selectStateJS from './selectors'
+{{/if}}
+
+const {{properCase name}} = () => (
+  <Layout>
+    <div>
+      {{properCase name}} Page
+    </div>
+  </Layout>
+)
+
+{{#if useState}}
+function mapStateToProps(state) {
+  return selectStateJS()(state)
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(actions, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)({{properCase name}})
+{{else}}
+export default {{properCase name}}
+{{/if}}

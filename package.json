@@ -18,7 +18,8 @@
     "build": "next build",
     "flow": "npm run lint && flow",
     "lint": "eslint .",
-    "start": "NODE_ENV=production node server.js"
+    "start": "NODE_ENV=production node server.js",
+    "plop": "plop --plopfile generators/index.js page"
   },
   "dependencies": {
     "axios": "^0.15.3",
@@ -53,6 +54,7 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.9.0",
-    "flow-bin": "^0.41.0"
+    "flow-bin": "^0.41.0",
+    "plop": "^1.7.4"
   }
 }

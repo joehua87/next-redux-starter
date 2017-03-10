@@ -1,0 +1,15 @@
+// @flow
+
+import { CALL_API } from 'helpers/callApi'
+import {
+  LOAD_START,
+  LOAD_SUCCESS,
+  LOAD_FAIL,
+} from './constants'
+
+export const load = () => ({ // eslint-disable-line import/prefer-default-export
+  [CALL_API]: {
+    types: [LOAD_START, LOAD_SUCCESS, LOAD_FAIL],
+    // endpoint: '/articles',
+  },
+})
