@@ -19,6 +19,7 @@ app
     server.get('/', (req, res) => app.render(req, res, '/Home', req.query))
     server.get('/about', (req, res) => app.render(req, res, '/About', req.query))
     server.get('/contact', (req, res) => app.render(req, res, '/Contact', req.query))
+    // Add new route here
 
     server.get('*', (req, res) => handle(req, res))
 
