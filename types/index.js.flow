@@ -1,0 +1,13 @@
+/* eslint-disable no-unused-vars */
+
+declare var System;
+declare var module;
+
+type Article = {
+  author: string,
+  title: string,
+  description: string,
+  url: string,
+  urlToImage: string,
+  publishedAt: string,
+}

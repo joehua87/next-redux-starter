@@ -1,0 +1,15 @@
+{
+    "presets": [
+        "next/babel"
+    ],
+    "plugins": [
+        "transform-flow-strip-types",
+        ["module-resolver", {
+        "root": ["."],
+        "alias": {
+          "test": "./test",
+          "underscore": "lodash"
+        }
+      }]
+    ]
+}
